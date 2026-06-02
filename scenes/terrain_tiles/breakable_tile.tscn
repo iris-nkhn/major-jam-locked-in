@@ -6,7 +6,16 @@
 atlas = ExtResource("1_hwu1g")
 region = Rect2(88, 40, 8, 8)
 
-[node name="Sprite2D" type="Sprite2D" unique_id=227562369]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwu1g"]
+size = Vector2(8, 8)
+
+[node name="BreakableTile" type="Node2D" unique_id=267759217]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=227562369]
 texture = SubResource("AtlasTexture_ye8hs")
 
-[node name="BreakableTile" type="Node2D" parent="." unique_id=267759217]
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1117429866]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1102342432]
+shape = SubResource("RectangleShape2D_hwu1g")
