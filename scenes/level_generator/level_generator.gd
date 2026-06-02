@@ -39,11 +39,11 @@ func initialize_floor(i : int) -> void:
 	var new_floor = floor_object.level_scene.instantiate();
 	add_child(new_floor)
 	floor_object.node = new_floor
-	move_to_top(floor_object.node)
+	if i > 0:
+		move_on_top(floor_object, floor_array[i-1])
 	
-func move_to_top(floor : Node2D) -> void:
-	var last_floor = floor_array[-2].node
-	floor.position.y = last_floor.position.y + 16
+func move_on_top(floor_to_move : Floor, last_floor : Floor) -> void:
+	floor_to_move.node.position.y = last_floor.node.position.y + 16 * 8
 	
 
 func get_random_floor() -> PackedScene:
