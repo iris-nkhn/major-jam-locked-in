@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bwinrj2d1s8yk"]
+
+[ext_resource type="Script" uid="uid://b32fgwtt8c73a" path="res://scripts/MainMenu.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://exc60slpblbt" path="res://scripts/CloudLayer.gd" id="2_clouds"]
+[ext_resource type="Script" uid="uid://dje30yahwskoy" path="res://scripts/MenuButton.gd" id="3_button"]
+[ext_resource type="Texture2D" uid="uid://vwmc7ih33028" path="res://assets/logo5.png" id="4_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c3kvkcs0dy6kx" path="res://assets/main_menu_background_enlongated.png" id="4_bg"]
+[ext_resource type="AudioStream" uid="uid://bmhue683isbet" path="res://assets/wind_sound.ogg" id="6_rtw2f"]
+[ext_resource type="StyleBox" uid="uid://c0btnstyle001" path="res://scenes/button_style.tres" id="7_btnstyle"]
+[ext_resource type="FontFile" uid="uid://bf63ky3vrwwc8" path="res://assets/CsRicottaPixelRegularDemo-rvOZA.otf" id="8_btnfont"]
+
+[node name="MainMenu" type="Control" unique_id=627341898]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="World" type="Node2D" parent="." unique_id=1900000001]
+
+[node name="Background" type="Sprite2D" parent="World" unique_id=1424993072]
+texture = ExtResource("4_bg")
+centered = false
+
+[node name="CloudLayer" type="Node2D" parent="World" unique_id=744043227]
+script = ExtResource("2_clouds")
+cloud_count = 8
+max_speed = 10.645
+auto_start = false
+
+[node name="TitleLogo" type="TextureRect" parent="." unique_id=269547880]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -282.0
+offset_top = 38.0
+offset_right = 524.0
+offset_bottom = 441.0
+grow_horizontal = 2
+texture = ExtResource("4_8ln24")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1313897978]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -224.0
+offset_right = 248.0
+offset_bottom = -48.0
+grow_vertical = 0
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="StartButton" type="Button" parent="Buttons" unique_id=2130316684]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(288, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_btnfont")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("7_btnstyle")
+theme_override_styles/pressed = ExtResource("7_btnstyle")
+theme_override_styles/hover = ExtResource("7_btnstyle")
+theme_override_styles/disabled = ExtResource("7_btnstyle")
+theme_override_styles/focus = ExtResource("7_btnstyle")
+text = "Start"
+script = ExtResource("3_button")
+
+[node name="OptionsButton" type="Button" parent="Buttons" unique_id=1468955530]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(288, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_btnfont")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("7_btnstyle")
+theme_override_styles/pressed = ExtResource("7_btnstyle")
+theme_override_styles/hover = ExtResource("7_btnstyle")
+theme_override_styles/disabled = ExtResource("7_btnstyle")
+theme_override_styles/focus = ExtResource("7_btnstyle")
+text = "Options"
+script = ExtResource("3_button")
+
+[node name="ExitButton" type="Button" parent="Buttons" unique_id=1933711858]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(288, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_btnfont")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("7_btnstyle")
+theme_override_styles/pressed = ExtResource("7_btnstyle")
+theme_override_styles/hover = ExtResource("7_btnstyle")
+theme_override_styles/disabled = ExtResource("7_btnstyle")
+theme_override_styles/focus = ExtResource("7_btnstyle")
+text = "Exit"
+script = ExtResource("3_button")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=884612783]
+stream = ExtResource("6_rtw2f")
+autoplay = true
+parameters/looping = true

@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://c0btnstyle001"]
+
+[ext_resource type="Texture2D" uid="uid://bv1vrghn044x3" path="res://assets/tinyRPG_manaSoulGUI_v_1_0/20250420manaSoulHeaderB-Sheet.png" id="1_hdr"]
+
+[resource]
+content_margin_left = 66.0
+content_margin_top = 14.0
+content_margin_right = 66.0
+content_margin_bottom = 14.0
+texture = ExtResource("1_hdr")
