@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d230fu3ej2cuj"]
+
+[ext_resource type="Texture2D" uid="uid://dq3v52ussst08" path="res://assets/8x8pxSpriteSheet.png" id="1_hwu1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8hs"]
+atlas = ExtResource("1_hwu1g")
+region = Rect2(88, 40, 8, 8)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=227562369]
+texture = SubResource("AtlasTexture_ye8hs")
+
+[node name="BreakableTile" type="Node2D" parent="." unique_id=267759217]

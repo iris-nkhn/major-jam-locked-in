@@ -241,7 +241,7 @@ use_texture_padding = false
 [sub_resource type="TileSet" id="TileSet_8dsex"]
 tile_size = Vector2i(8, 8)
 uv_clipping = true
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_8xvjk")
 sources/0 = SubResource("TileSetAtlasSource_pdsfx")
 

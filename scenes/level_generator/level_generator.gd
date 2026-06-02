@@ -6,7 +6,7 @@ const FLOOR_COUNT = 10;
 var floor_array : Array[Floor] = [];
 
 var pickable_floors = [
-	"res://scenes/levels/level_example.tscn"
+	"res://scenes/levels/level_example_tile_scenes.tscn",
 ]
 
 class Floor:
