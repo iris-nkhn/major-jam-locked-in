@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdou7qne1stya"]
+
+[ext_resource type="Script" uid="uid://uduvomv8wk4t" path="res://scenes/level_generator/level_generator.gd" id="1_m3w55"]
+
+[node name="LevelGenerator" type="Node2D" unique_id=2099959727]
+script = ExtResource("1_m3w55")
