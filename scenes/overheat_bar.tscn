@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bi654ry8xo6ln"]
+
+[ext_resource type="Texture2D" uid="uid://d4h2mq3n5wnjf" path="res://assets/vial_lleno_1.png" id="1_3kfs0"]
+[ext_resource type="Texture2D" uid="uid://dcx4cpdii8d28" path="res://assets/heatbar.png" id="1_suft3"]
+
+[node name="OverheatBar" type="Control" unique_id=856505715]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1122.0
+offset_bottom = -583.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fillcontainer" type="Control" parent="." unique_id=1395164157]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Fill" type="NinePatchRect" parent="Fillcontainer" unique_id=1583488756]
+texture_filter = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_3kfs0")
+patch_margin_top = 51
+patch_margin_bottom = 10
+
+[node name="Frame" type="NinePatchRect" parent="." unique_id=640970269]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_suft3")
+patch_margin_top = 51
+patch_margin_bottom = 10
