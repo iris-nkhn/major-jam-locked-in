@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://d230fu3ej2cuj"]
+
+[ext_resource type="Texture2D" uid="uid://dq3v52ussst08" path="res://assets/8x8pxSpriteSheet.png" id="1_hwu1g"]
+[ext_resource type="Script" uid="uid://bajsf4okj17cg" path="res://scenes/terrain_tiles/breakable_tile.gd" id="1_ye8hs"]
+[ext_resource type="Texture2D" uid="uid://g2yg6e0q3b5f" path="res://assets/break_1.png" id="3_yunlq"]
+[ext_resource type="Texture2D" uid="uid://bphc6g0jbe3ms" path="res://assets/break_2.png" id="4_i7ut8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8hs"]
+atlas = ExtResource("1_hwu1g")
+region = Rect2(88, 40, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwu1g"]
+size = Vector2(8, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e38m0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yunlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i7ut8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BreakableTile" type="Node2D" unique_id=267759217]
+script = ExtResource("1_ye8hs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=227562369]
+texture = SubResource("AtlasTexture_ye8hs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1117429866]
+visible = false
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1102342432]
+shape = SubResource("RectangleShape2D_hwu1g")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/StaticBody2D" unique_id=1846398117]
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D/Area2D" unique_id=1570157543]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_hwu1g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1987633970]
+modulate = Color(1, 1, 1, 0.58431375)
+sprite_frames = SubResource("SpriteFrames_e38m0")
+
+[node name="Timer" type="Timer" parent="." unique_id=1777062425]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=34452438]
+zoom = Vector2(14.12, 14.12)
