@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bgji5l2ba4w8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46fxe"]
+bg_color = Color(0.965572, 0.395662, 0.184334, 1)
+
+[node name="Control" type="Control" unique_id=230467474]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeatBar" type="ProgressBar" parent="." unique_id=34120629]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 27.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_46fxe")
+show_percentage = false

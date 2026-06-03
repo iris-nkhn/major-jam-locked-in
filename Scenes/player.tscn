@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dq3hryh6oppqu"]
+
+[ext_resource type="Texture2D" uid="uid://eirnphlweik5" path="res://Assets/Pixel_Adventure/Free/Main Characters/Ninja Frog/Idle (32x32).png" id="1_a6ay3"]
+[ext_resource type="Script" uid="uid://bloc2sf0ixewu" path="res://Scripts/player.gd" id="1_u885d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ettp0"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unnhg"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_och8b"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i4ip"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mleg"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if53t"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfjcn"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0sbr"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nffin"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqtkp"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2tot"]
+atlas = ExtResource("1_a6ay3")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b11um"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ettp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unnhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_och8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i4ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mleg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if53t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfjcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0sbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nffin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqtkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2tot")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ki3d"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_0pfm6"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dh8di"]
+_data = {
+&"Idle": SubResource("Animation_0pfm6")
+}
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_qjp7k"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_4deu3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_85mur"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ny0yr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lumi8"]
+advance_mode = 2
+advance_condition = &"not_moving"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_errk2"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_qjp7k")
+states/Idle/position = Vector2(218, 124)
+states/Run/node = SubResource("AnimationNodeBlendSpace2D_4deu3")
+states/Run/position = Vector2(441, 124)
+states/Start/position = Vector2(89, 124)
+transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_85mur"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ny0yr"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_lumi8")]
+
+[node name="Player" type="CharacterBody2D" unique_id=445793473]
+script = ExtResource("1_u885d")
+SPEED = 150.0
+JUMP_VELOCITY = -300.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=145890251]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439967821]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_b11um")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2064473149]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_0ki3d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=58479167]
+libraries/ = SubResource("AnimationLibrary_dh8di")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1640125303]
+tree_root = SubResource("AnimationNodeStateMachine_errk2")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_moving = false
+parameters/conditions/not_moving = false
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Run/blend_position = Vector2(-0.3472, -0.301587)
