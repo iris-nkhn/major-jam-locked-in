@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Major-Jam-LockedIn"
+config/name="Wonder"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,4 +25,4 @@ version_control/autoload_on_startup=true
 
 [rendering]
 
-rendering_device/driver.windows="d3d12"
+textures/canvas_textures/default_texture_filter=0
