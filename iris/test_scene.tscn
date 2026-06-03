@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://160e5lssmy01"]
 
-[ext_resource type="PackedScene" uid="uid://bn58bav11fhy2" path="res://scenes/levels/level_example.tscn" id="1_jtnkw"]
+[ext_resource type="PackedScene" uid="uid://d2jlnrjojue2p" path="res://scenes/levels/level_example_tile_scenes.tscn" id="1_7nyr6"]
 [ext_resource type="Script" uid="uid://bvfi2hk6ynhru" path="res://iris/camera_2d.gd" id="2_7nyr6"]
 
 [node name="TestScene" type="Node2D" unique_id=419813102]
 
-[node name="LevelExample" parent="." unique_id=873657269 instance=ExtResource("1_jtnkw")]
+[node name="Node2D" parent="." unique_id=556208433 instance=ExtResource("1_7nyr6")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1668029183]
 position = Vector2(64, 64)
