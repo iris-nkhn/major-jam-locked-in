@@ -139,12 +139,12 @@ sources/0 = SubResource("TileSetAtlasSource_mqhxf")
 
 [node name="Player" parent="." unique_id=1915598723 instance=ExtResource("1_sy16h")]
 position = Vector2(212, -16)
+heatIncreaseOnJump = 10
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1731695656]
 position = Vector2(-212, 7)
 
 [node name="UI" parent="Player/Camera2D" unique_id=724289688 instance=ExtResource("2_wrm1d")]
-position = Vector2(-67, -305)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=915987293]
 
