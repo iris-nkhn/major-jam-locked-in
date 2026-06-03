@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bojel68g17sqr"]
+
+[ext_resource type="PackedScene" uid="uid://dq3hryh6oppqu" path="res://scenes/player/player.tscn" id="1_sy16h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jaon5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lfwas"]
+normal = Vector2(2.98023e-08, -1)
+distance = -1.0
+
+[node name="Game" type="Node2D" unique_id=145704595]
+
+[node name="Player" parent="." unique_id=1281658733 instance=ExtResource("1_sy16h")]
+position = Vector2(0, -13)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1734969488]
+position = Vector2(0, -9)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=2058063505]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1654633450]
+shape = SubResource("WorldBoundaryShape2D_jaon5")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1620640405]
+position = Vector2(288, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=210389288]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_lfwas")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=342321318]
+position = Vector2(-286, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=395525758]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_lfwas")
